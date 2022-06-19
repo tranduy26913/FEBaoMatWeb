@@ -48,7 +48,6 @@ function Comment(props) {
     useEffect(() => {
         const loadComment = async () => {
             const data = await getComments()
-            console.log(data)
             setCount(data?.length || 0)
             setComments(data)
         }
@@ -59,7 +58,7 @@ function Comment(props) {
 
     const onClickDeleteComment = async (e) => {
         if (user) {
-            apiMain.deleteComment(user, { id: e.target.name }, dispatch, loginSuccess)
+            apiMain.deleteComment(user, { id: e.target.id }, dispatch, loginSuccess)
                 .then(async (res) => {
                     toast.success(res.message, { hideProgressBar: true, pauseOnHover: false, autoClose: 1000 })
                     const data = await getComments()
@@ -131,7 +130,7 @@ function Comment(props) {
                                         </div>
                                         <ul className="comment__nav">
                                             {item.username === user?.username ?
-                                                <li name={item.id} onClick={onClickDeleteComment} className='fs-14 text-secondary'><i name={item.id} className="fa-solid fa-trash"></i> Xoá</li> : ''
+                                                <li id={item.id} onClick={onClickDeleteComment} className='fs-14 text-secondary'><i name={item.id} className="fa-solid fa-trash"></i> Xoá</li> : ''
                                             }
                                             <li className='fs-14 text-secondary'><i className="fa-solid fa-reply"></i> Trả lời</li>
                                             <li className='fs-14 text-secondary'><i className="fa-solid fa-flag"></i> Báo xấu</li>
