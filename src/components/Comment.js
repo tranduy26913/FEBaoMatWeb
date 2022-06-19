@@ -131,7 +131,7 @@ function Comment(props) {
                                         </div>
                                         <ul className="comment__nav">
                                             {item.username === user?.username ?
-                                                <li name={item.id} onClick={onClickDeleteComment} className='fs-14 text-secondary'><i className="fa-solid fa-trash"></i> Xoá</li> : ''
+                                                <li name={item.id} onClick={onClickDeleteComment} className='fs-14 text-secondary'><i name={item.id} className="fa-solid fa-trash"></i> Xoá</li> : ''
                                             }
                                             <li className='fs-14 text-secondary'><i className="fa-solid fa-reply"></i> Trả lời</li>
                                             <li className='fs-14 text-secondary'><i className="fa-solid fa-flag"></i> Báo xấu</li>
