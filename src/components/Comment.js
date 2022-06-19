@@ -100,7 +100,7 @@ function Comment(props) {
                     <img src={user?.image || avt} alt="" />
                 </div>
                 <div className="comment__input">
-                    <textarea style={{ 'height': '100%', 'padding': '5px 20px 5px 5px' }} className='fs-15 fw-5' value={content} onChange={e => { setContent(e.target.value) }}></textarea>
+                    <textarea  maxLength={500} style={{ 'height': '100%', 'padding': '5px 20px 5px 5px' }} className='fs-15 fw-5' value={content} onChange={e => { setContent(e.target.value) }}></textarea>
                     <div className='d-flex comment__icon' ><span onClick={onClickCreateComment} className=" fs-20 "><i className="fa-solid fa-comment"></i></span></div>
                 </div>
 

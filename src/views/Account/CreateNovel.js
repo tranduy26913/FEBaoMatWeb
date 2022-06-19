@@ -103,14 +103,14 @@ function CreateNovel({userInfo}) {
                                 <form>
                                     <div className="group-info">
                                         <label htmlFor="" style={labelStyle}>Tên truyện</label>
-                                        <input onChange={onChangeName} value={name || ""} />
+                                        <input  maxLength={100} onChange={onChangeName} value={name || ""} />
                                     </div>
                                     <div className="group-info">
-                                        <label htmlFor="" style={labelStyle}>Mô tả</label>
+                                        <label  maxLength={500} htmlFor="" style={labelStyle}>Mô tả</label>
                                         <input onChange={e => { setDescription(e.target.value) }} value={description}></input>
                                     </div>
                                     <div className="group-info">
-                                        <label style={labelStyle}>Tác giả</label>
+                                        <label  maxLength={50} style={labelStyle}>Tác giả</label>
                                         <input required onChange={e => { setTacgia(e.target.value) }} value={tacgia}></input>
                                     </div>
                                     <div className="group-info">

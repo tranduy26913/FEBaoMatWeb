@@ -44,7 +44,6 @@ const contentRef = useRef(null)
           <div className="d-lex">
         <input placeholder='Font size' value={fontsize} onChange={(e)=>{setFontsize(e.target.value)}}></input>
           <h1 className='chapter-name'>{chapter?.tenchap}</h1>
-          <script>alert("ddddddd")</script>
           <div className={`fs-${fontsize}`}>
             <div ref={contentRef} id="chapter-content"></div>
           {/* <>{chapter?.content?.split('\n').map(item=>{return item==" "||item=='.'||item.lenght===0||item=='. '||item==' .'?<br/>: <p>{item}</p>})}</> */}

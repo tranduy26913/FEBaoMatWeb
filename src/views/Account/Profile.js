@@ -103,8 +103,14 @@ function Profile({ userInfo, changeUserInfo }) {
 
   const onChangeImage = (e) => {
     if (e.target.files.lenght !== 0) {
-      console.log(e.target.files)
       let ext = e.target.files[0].name.match(/\.([^\.]+)$/)[1];
+      let size = e.target.file[0].size/ 1024 / 1024; // in MiB
+      if(size>3){
+        toast.warning("File được lựa chọn phải nhỏ hơn 3MB. Vui lòng lựa chọn lại");
+        setImage(null)
+        setPreview(userInfo?.image)
+        document.getElementById('input-file').value = "";
+      }
       var type = ['jpg','bmp','png','tif']
       if (type.includes(ext)){
         setImage(e.target.files[0]);
@@ -138,11 +144,11 @@ function Profile({ userInfo, changeUserInfo }) {
                 <form>
                   <div className="group-info">
                     <label htmlFor="" style={labelStyle}>Tên hiển thị</label>
-                    <input onChange={onChangeName} value={name || ""} />
+                    <input  maxLength={50} onChange={onChangeName} value={name || ""} />
                   </div>
                   <div className="group-info">
                     <label htmlFor="" style={labelStyle}>Email</label>
-                    {<input readOnly value={userInfo?.email || ""}></input>}
+                    {<input  maxLength={50} readOnly value={userInfo?.email || ""}></input>}
                   </div>
                   <div className="group-info">
                     <label htmlFor="" style={labelStyle}>Ngày sinh</label>

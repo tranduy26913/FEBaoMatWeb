@@ -91,7 +91,7 @@ const Login = props => {
             <a onClick={props.onClickActive}>Kích hoạt tài khoản</a>
           </div>
           <div className="field-wrap">
-            <input
+            <input maxLength={50}
               placeholder="Username" required name="username" type="text"
               onChange={(e) => {
                 setUsername(e.target.value)
@@ -105,7 +105,7 @@ const Login = props => {
             <a onClick={props.onClickForgetpw}>Quên mật khẩu</a>
           </div>
           <div className="field-wrap">
-            <input placeholder="Password" required name="password" type='password' value={password}
+            <input maxLength={50} placeholder="Password" required name="password" type='password' value={password}
               onChange={e => {
                 setPassword(e.target.value)
               }} />
@@ -156,7 +156,7 @@ const ReActive = props => {
             <label >Email</label>
           </div>
           <div className="field-wrap">
-            <input
+            <input maxLength={50}
               placeholder="Email" required name="emailActive" type="text"
               onChange={onChangeEmail
               } value={email} />
@@ -195,7 +195,7 @@ const ForgetPassword = props => {
             <label>Email</label>
           </div>
           <div className="field-wrap">
-            <input
+            <input maxLength={50}
               placeholder="Email" required name="emailActive" type="text"
               onChange={onChangeEmail
               } value={email} />
@@ -348,7 +348,7 @@ const Register = props => {
         <div className="form-group d-flex">
           <label>Email</label>
           <div className="field-wrap">
-            <input placeholder="example@gmail.com" required name="emailRegister" type="text" value={emailRegister}
+            <input maxLength={50} placeholder="example@gmail.com" required name="emailRegister" type="text" value={emailRegister}
               onChange={onChangeEmail}
             />
           </div>
@@ -358,7 +358,7 @@ const Register = props => {
         <div className="form-group d-flex">
           <label>Tên đăng nhập</label>
           <div className="field-wrap">
-            <input required name="usernameRegister" type="text" value={usernameRegister}
+            <input maxLength={50} required name="usernameRegister" type="text" value={usernameRegister}
               onChange={onChangeUsername} />
           </div>
           <span className={`${valid[1] ? 'success' : 'error'}`}>{msgUsername}</span>
@@ -367,7 +367,7 @@ const Register = props => {
         <div className="form-group d-flex">
           <label>Mật khẩu</label>
           <div className="field-wrap">
-            <input required={true} name={"passwordRegister"} type='password' value={passwordRegister}
+            <input maxLength={50} required={true} name={"passwordRegister"} type='password' value={passwordRegister}
               onChange={onChangePassword}
             />
           </div>
@@ -377,7 +377,7 @@ const Register = props => {
         <div className="form-group d-flex">
           <label>Nhập lại mật khẩu</label>
           <div className="field-wrap">
-            <input required={true} name={"passwordCfRegister"} type='password' value={passwordCfRegister}
+            <input maxLength={50} required={true} name={"passwordCfRegister"} type='password' value={passwordCfRegister}
               onChange={onChangePasswordCf}
             />
           </div>
