@@ -119,7 +119,7 @@ function Comment(props) {
                                     </div>
                                     <div className="comment__body">
                                         <div className="comment__author__info">
-                                            <h4>{item.tenhienthi}</h4>
+                                            <h4 className='comment__author__name'>{item.tenhienthi}</h4>
                                             <span className='fs-12 fw-4 text-secondary'>
                                                 {
                                                     calDate(item.createdAt)
