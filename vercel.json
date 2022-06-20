@@ -28,6 +28,10 @@
             {
                 "key": "Permissions-Policy",
                 "value": "geolocation=(self), microphone=()"
+            },
+            {
+                "key": "Access-Control-Allow-Origin",
+                "value": "https://febaomatweb.vercel.app"
             }
         ]
     }]
