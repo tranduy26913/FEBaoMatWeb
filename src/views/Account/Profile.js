@@ -104,12 +104,13 @@ function Profile({ userInfo, changeUserInfo }) {
   const onChangeImage = (e) => {
     if (e.target.files.lenght !== 0) {
       let ext = e.target.files[0].name.match(/\.([^\.]+)$/)[1];
-      let size = e.target.file[0].size/ 1024 / 1024; // in MiB
+      let size = e.target.files[0].size/ 1024 / 1024; // in MiB
       if(size>3){
         toast.warning("File được lựa chọn phải nhỏ hơn 3MB. Vui lòng lựa chọn lại");
         setImage(null)
         setPreview(userInfo?.image)
         document.getElementById('input-file').value = "";
+        return
       }
       var type = ['jpg','bmp','png','tif']
       if (type.includes(ext)){
